@@ -1,0 +1,13 @@
+version: '3.6'
+
+services:
+  builder:
+    container_name: rna-builder
+    build:
+      context: ./.docker/node16-jdk11-sdk28
+      dockerfile: Dockerfile
+    #   network: host
+    # network_mode: host
+    command: tail -f /dev/null
+    volumes:
+      - .:/usr/src/app
